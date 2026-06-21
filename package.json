@@ -1,0 +1,20 @@
+{
+  "name": "project-hermes",
+  "version": "1.0.0",
+  "description": "A full stack video streaming platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrestHawk/project-hermes.git"
+  },
+  "author": "Thomas Davies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrestHawk/project-hermes/issues"
+  },
+  "homepage": "https://github.com/CrestHawk/project-hermes#readme",
+  "devDependencies": {}
+}
