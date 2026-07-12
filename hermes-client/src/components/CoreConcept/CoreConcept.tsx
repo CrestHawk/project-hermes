@@ -1,6 +1,12 @@
 import "./CoreConcept.css";
 
-export function CoreConcept({ image, title, description }) {
+type CoreConceptProps = {
+  image: string;
+  title: string;
+  description: string;
+};
+
+export function CoreConcept({ image, title, description }: CoreConceptProps) {
   return (
     <li>
       <img src={image} alt={title} />

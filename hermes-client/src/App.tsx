@@ -1,8 +1,13 @@
 import { Header } from "./components/Header/Header.tsx";
 import { CoreConcept } from "./components/CoreConcept/CoreConcept.tsx";
 import { CORE_CONCEPTS } from "./data.ts";
+import TabButton from "./components/TabButton/TabButton.tsx";
 
 function App() {
+  function handleSelect() {
+    console.log("Hello World - selected!");
+  }
+
   return (
     <div>
       <Header />
@@ -15,6 +20,15 @@ function App() {
             <CoreConcept {...CORE_CONCEPTS[2]} />
             <CoreConcept {...CORE_CONCEPTS[3]} />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect={handleSelect}>Components</TabButton>
+            <TabButton onSelect={handleSelect}>JSX</TabButton>
+            <TabButton onSelect={handleSelect}>Props</TabButton>
+            <TabButton onSelect={handleSelect}>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
