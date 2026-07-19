@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Header } from "./components/Header/Header.tsx";
 import { CoreConcept } from "./components/CoreConcept/CoreConcept.tsx";
-import { CORE_CONCEPTS } from "./data.ts";
+import { EXAMPLES, CORE_CONCEPTS, type ExampleKey } from "./data.ts";
 import TabButton from "./components/TabButton/TabButton.tsx";
 
 function App() {
-  const [selectedTopic, setSelectedTopic] = useState("Please click a button");
+  const [selectedTopic, setSelectedTopic] = useState("components" as ExampleKey);
 
-  function handleSelect(selectedButton: string) {
-    // selectedButton => "components" | "jsx" | "props" | "state"
+  function handleSelect(selectedButton: ExampleKey) {
     setSelectedTopic(selectedButton);
-    console.log(selectedTopic);
   }
 
   return (
@@ -34,7 +32,13 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <div id="tab-content">
+            <h3>{EXAMPLES[selectedTopic].title}</h3>
+            <p>{EXAMPLES[selectedTopic].description}</p>
+            <pre>
+              <code>{EXAMPLES[selectedTopic].code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>
